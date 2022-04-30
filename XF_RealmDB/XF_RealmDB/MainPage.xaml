@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XF_RealmDB.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XF_RealmDB"
+    Title="Cadastro de Funcionários">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ListView
+            x:Name="lvFuncionarios"
+            Footer="Footer"
+            HasUnevenRows="false"
+            Header="Header Value"
+            ItemSelected="lvFuncrionarios_OnSelecao">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        Padding="5,5,5,5"
+                        BackgroundColor="Blue"
+                        Orientation="Horizontal">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Nome"
+                            TextColor="White" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Cargo"
+                            TextColor="White" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            Text="Setor"
+                            TextColor="White" />
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
+                            <Label FontSize="Medium" Text="{Binding Nome}" />
+                            <Label FontSize="Medium" Text="{Binding Cargo}" />
+                            <Label FontSize="Medium" Text="{Binding Setor}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.FooterTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5,5,5,5" Orientation="Horizontal">
+                        <Button Clicked="btnIncluir_Click" Text="Incluir Novo Funcionário" />
+                    </StackLayout>
+                </DataTemplate>
+            </ListView.FooterTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
+

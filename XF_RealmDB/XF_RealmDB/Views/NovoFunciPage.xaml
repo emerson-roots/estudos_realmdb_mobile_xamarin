@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XF_RealmDB.Views.NovoFunciPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Novo Funcionário">
+    <TableView BackgroundColor="White" Intent="Settings">
+        <TableRoot>
+            <TableSection Title="Incluir">
+                <EntryCell
+                    x:Name="txtNome"
+                    Keyboard="Text"
+                    Label="Nome" />
+                <EntryCell
+                    x:Name="txtCargo"
+                    Keyboard="Text"
+                    Label="Cargo" />
+                <EntryCell
+                    x:Name="txtSetor"
+                    Keyboard="Text"
+                    Label="Setor" />
+                <EntryCell
+                    x:Name="txtQualificacao"
+                    Keyboard="Text"
+                    Label="Qualificão" />
+                <ViewCell>
+                    <ContentView Padding="0,0">
+                        <ContentView.Padding>
+                            <OnPlatform
+                                x:TypeArguments="Thickness"
+                                WinPhone="0,15,0,0"
+                                iOS="10,0" />
+                        </ContentView.Padding>
+                        <ContentView.Content>
+                            <Button
+                                BackgroundColor="#fd6d6d"
+                                Clicked="btnSalvar_Click"
+                                Text="Salvar"
+                                TextColor="White" />
+                        </ContentView.Content>
+                    </ContentView>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
