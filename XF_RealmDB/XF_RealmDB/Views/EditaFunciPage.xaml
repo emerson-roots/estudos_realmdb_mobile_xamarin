@@ -1,12 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XF_RealmDB.Views.EditaFunciPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+<ContentPage
+    x:Class="XF_RealmDB.Views.EditaFunciPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Editar Funcionário">
+    <TableView BackgroundColor="White" Intent="Settings">
+        <TableRoot>
+            <TableSection Title="Editar">
+                <EntryCell
+                    x:Name="txtNome"
+                    Keyboard="Text"
+                    Label="Nome"
+                    Text="{Binding Nome}" />
+                <EntryCell
+                    x:Name="txtCargo"
+                    Keyboard="Text"
+                    Label="Cargo"
+                    Text="{Binding Cargo}" />
+                <EntryCell
+                    x:Name="txtSetor"
+                    Keyboard="Text"
+                    Label="Setor"
+                    Text="{Binding Setor}" />
+                <EntryCell
+                    x:Name="txtQualificacao"
+                    Keyboard="Text"
+                    Label="Qualificação"
+                    Text="{Binding Qualificacao}" />
+                <ViewCell>
+                    <ContentView Padding="0,0">
+                        <ContentView.Padding>
+                            <OnPlatform
+                                x:TypeArguments="Thickness"
+                                WinPhone="0,15,0,0"
+                                iOS="10,0" />
+                        </ContentView.Padding>
+                        <ContentView.Content>
+                            <Button
+                                BackgroundColor="#fd6d6d"
+                                Clicked="btnOnSalvarClicked"
+                                Text="Alterar dados"
+                                TextColor="White" />
+                        </ContentView.Content>
+                    </ContentView>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
 </ContentPage>

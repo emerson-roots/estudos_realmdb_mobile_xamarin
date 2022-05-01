@@ -22,13 +22,13 @@ namespace XF_RealmDB.Views
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var RealmDb = Realm.GetInstance();
-            Funcionario ultimoIdFuncionario = RealmDb.All<Funcionario>().OrderBy(x => x.Id).LastOrDefault();
-            var newId = ultimoIdFuncionario != null ? ultimoIdFuncionario.Id + 1 : 1;
+           // Funcionario ultimoIdFuncionario = RealmDb.All<Funcionario>().OrderBy(x => x.Id).LastOrDefault();
+           // var newId = ultimoIdFuncionario != null ? ultimoIdFuncionario.Id + 1 : 1;
 
 
             var funcionario = new Funcionario()
             {
-                Id = newId,
+                //Id = newId,
                 Nome = txtNome.Text,
                 Setor = txtSetor.Text,
                 Cargo = txtCargo.Text,

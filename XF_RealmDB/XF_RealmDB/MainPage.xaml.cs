@@ -21,6 +21,7 @@ namespace XF_RealmDB
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            //Realm.DeleteRealm(new RealmConfiguration("default.realm"));
             var RealmDb = Realm.GetInstance();
             var listaFuncionarios = RealmDb.All<Funcionario>();
             lvFuncionarios.ItemsSource = listaFuncionarios;
